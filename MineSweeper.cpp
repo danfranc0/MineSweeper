@@ -348,14 +348,6 @@ void updateCounter(Tile** tileObjs, vector<sf::Sprite>& counterSprites, int mine
 }
 
 bool checkMine(int xIndex, int yIndex, Tile** tileObjs) {
-    /*
-    int index = ((yIndex * width) + xIndex);
-
-    sf::Sprite tempSprite(TextureManager::GetTexture("tile_revealed"));
-    tempSprite.setPosition(sf::Vector2f(xIndex * 32, yIndex * 32));
-    tileSprites[index] = tempSprite;
-
-    */
     if (tileObjs[yIndex][xIndex].mine == true) {
         // reveal mine
         return true;
@@ -412,18 +404,6 @@ void drawHints(int width, int height, Tile** tileObjs, vector<sf::Sprite>& hintS
                     hintSprites.push_back(tempSprite);
                 }
             }
-            /*
-            Tile tempTile = tileObjs[i][j];
-            cout << tempTile.mineNum << endl;
-            if (tileObjs[i][j].mineNum > 0) {
-                cout << tileObjs[i][j].mineNum << endl;
-                if (tileObjs[i][j].mineNum == 1) {
-                    sf::Sprite tempSprite(TextureManager::GetTexture("number_1"));
-                    tempSprite.setPosition(sf::Vector2f((j * 32), (i * 32)));
-                    hintSprites.push_back(tempSprite);
-                }
-            }
-            */
         }
     }
 }
